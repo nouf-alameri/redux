@@ -31,7 +31,7 @@ const Cart = () => {
           <br />
           <button
             onClick={() => {
-              dispatch(checkout(a));
+              dispatch(checkout(a,navigate));
             }}
             style={{ backgroundColor: "Black", color: "white" }}
           >

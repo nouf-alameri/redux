@@ -8,7 +8,7 @@ export const checkoutReducer = (state = initialState, action) => {
   switch (action.type) {
     case CHECKOUT:
       console.log("action.data",action.data)
-    //   action.nav("/checkout");
+      action.nav("/checkout");
       return {
         ...state,
         bill: [...state.bill,action.data]
