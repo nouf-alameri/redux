@@ -5,3 +5,5 @@ export const WISH = "WISH";
 export const SIGNUP = "SIGNUP"; 
 export const LOGIN = "LOGIN";
 export const CHECKOUT ="CHECKOUT" ;
+export const ADDRESS = "ADDRESS"; 
+

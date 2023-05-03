@@ -9,6 +9,7 @@ import Layout from "./component/layout";
 import Signup from "./component/Signup";
 import Login from "./component/Login";
 import Checkout from "./component/Checkout";
+import Thank from "./component/Thank";
 
 
 function App() {
@@ -24,10 +25,10 @@ function App() {
           <Route path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
           <Route path="checkout" element={<Checkout />} />
-
+          <Route path="thank" element={<Thank />} />
 
           {/* 
-          <Route path="thank" element={<Thank />} />
+          
           <Route path="orders" element={<Orders />} />
           <Route path="details" element={<OrderDetail />} /> */}
 

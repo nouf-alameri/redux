@@ -1,7 +1,8 @@
-import { CHECKOUT } from "../actionTypes/actionTypes";
+import { CHECKOUT, ADDRESS } from "../actionTypes/actionTypes";
 
 const initialState = {
   bill: [],
+  address: { name:"", country:"", city:"", street:"" }
 };
 
 export const checkoutReducer = (state = initialState, action) => {
@@ -13,6 +14,14 @@ export const checkoutReducer = (state = initialState, action) => {
         ...state,
         bill: [...state.bill,action.data]
       };
+      case ADDRESS:
+      
+      action.nav("/thank");
+      return{
+        ...state, 
+        address: action.data
+      }
+    
 
     default:
       return state;

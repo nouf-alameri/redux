@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useState}from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addressData } from "../actions/checkoutAction";
+
 
 const Checkout = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [address, setAddress] = useState({
+    name:"", country:"", city:"", street:""
+  })
+
 
   return (
     <div>
@@ -24,6 +32,55 @@ const Checkout = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div class="wrapper">
+        <div>
+        <label for="name">Name</label>
+        <input
+              required
+              type="text"
+              onChange={(x)=>setAddress({...address, name:x.target.value})}
+              id="name"
+              name="name"
+            />
+        </div>
+        <div>
+        <label for="country">Country</label>
+        <input
+              required
+              type="text"
+              onChange={(x)=>setAddress({...address, country:x.target.value})}
+              id="country"
+              name="country"
+            />
+        </div>
+        <div>
+        <label for="city">City</label>
+        <input
+              required
+              type="text"
+              onChange={(x)=>setAddress({...address, name:x.target.value})}
+              id="city"
+              name="city"
+            />
+        </div>
+        <div>
+        <label for="street">Street</label>
+        <input
+              required
+              type="text"
+              onChange={(x)=>setAddress({...address, street:x.target.value})}
+              id="street"
+              name="street"
+            />
+        </div>
+        <button
+            onClick={() => {dispatch(addressData(address, navigate));}}
+            className="w-full text-center py-3 rounded bg-green text-black hover:bg-green-dark focus:outline-none my-1"
+          >
+            Create Account
+          </button>
+        
       </div>
     </div>
   );

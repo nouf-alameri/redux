@@ -10,7 +10,7 @@ const initialState = {
         console.log("action.data wish ",action.data)
         return {
           ...state,
-          wishList: [...state.wishList,action.data]
+          wishList: [...state.wishList, action.data]
         };
         default:
           return state; 

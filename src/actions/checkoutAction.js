@@ -1,4 +1,4 @@
-import { CHECKOUT } from "../actionTypes/actionTypes";
+import { CHECKOUT, ADDRESS } from "../actionTypes/actionTypes";
 
 const checkout = (products,navigate) => {
     
@@ -10,4 +10,13 @@ const checkout = (products,navigate) => {
     }
   };
 
-  export {checkout};
+const addressData = (add, navigate) =>{
+    return {
+        type: ADDRESS, 
+        data: add, 
+        nav: navigate
+
+    }
+}
+
+  export {checkout, addressData};
