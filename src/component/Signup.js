@@ -1,9 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import { signup } from "../actions/signupAction";
 import { useSelector, useDispatch } from "react-redux";
 const Signup = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch()
+  const [user, setUser] = useState({
+    username: "", email: "",dob:new Date(),  password: "", confpassword: ""
+  })
     
   return (
 <div className="bg-grey-lighter min-h-screen flex flex-col">
@@ -15,8 +18,8 @@ const Signup = () => {
             className="block border border-grey-light w-full p-3 rounded mb-4"
             name="username"
             placeholder="Username"
+            onChange={(x)=>setUser({...user, username:x.target.value})}
           />
-
 
 
           <input
@@ -24,6 +27,8 @@ const Signup = () => {
             className="block border border-grey-light w-full p-3 rounded mb-4"
             name="email"
             placeholder="Email"
+            onChange={(x)=>setUser({...user, email:x.target.value})}
+
           />
 
 
@@ -33,6 +38,8 @@ const Signup = () => {
             className="block border border-grey-light w-full p-3 rounded mb-4"
             name="DateOfBirth"
             placeholder="DOB"
+            onChange={(x)=>setUser({...user, dob:x.target.value})}
+
           />
 
           <input
@@ -40,6 +47,8 @@ const Signup = () => {
             className="block border border-grey-light w-full p-3 rounded mb-4"
             name="password"
             placeholder="Password"
+            onChange={(x)=>setUser({...user, password:x.target.value})}
+
           />
 
           <input
@@ -47,11 +56,13 @@ const Signup = () => {
             className="block border border-grey-light w-full p-3 rounded mb-4"
             name="confirm_password"
             placeholder="Confirm Password"
+            onChange={(x)=>setUser({...user, confpassword:x.target.value})}
+
           />
 
 
           <button
-            onClick={() => {dispatch(signup());}}
+            onClick={() => {dispatch(signup(user));}}
             className="w-full text-center py-3 rounded bg-green text-black hover:bg-green-dark focus:outline-none my-1"
           >
             Create Account

@@ -3,4 +3,5 @@ export const DELETE_ITEM = "DELETE_ITEM";
 export const API = "API"; 
 export const WISH = "WISH"; 
 export const SIGNUP = "SIGNUP"; 
-export const LOGIN = "LOGIN"; 
+export const LOGIN = "LOGIN";
+export const CHECKOUT ="CHECKOUT" ;

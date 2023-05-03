@@ -6,6 +6,9 @@ import Wish from "./component/Wish";
 import Products from "./component/Products";
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import Layout from "./component/layout";
+import Signup from "./component/Signup";
+import Login from "./component/Login";
+import Checkout from "./component/Checkout";
 
 
 function App() {
@@ -18,10 +21,12 @@ function App() {
           <Route path="/" index element={<Products/>} />
           <Route path="cart" element={<Cart />} />  
           <Route path="wish" element={<Wish />} /> 
-          {/* 
-          <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="billing" element={<Billing />} />
+          <Route path="login" element={<Login />} />
+          <Route path="checkout" element={<Checkout />} />
+
+
+          {/* 
           <Route path="thank" element={<Thank />} />
           <Route path="orders" element={<Orders />} />
           <Route path="details" element={<OrderDetail />} /> */}

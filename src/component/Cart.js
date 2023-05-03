@@ -1,6 +1,8 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, deleteItem } from "../actions/cartAction";
+import { checkout } from "../actions/checkoutAction";
+import { useNavigate } from "react-router-dom";
+
 
 const Cart = () => {
   const state = useSelector((state) => state);
@@ -9,6 +11,7 @@ const Cart = () => {
   //   console.log(state)
   //   state
   // }, []);
+  const navigate = useNavigate();
 
 
   return (
@@ -24,17 +27,20 @@ const Cart = () => {
           <p>{a.category}</p>
           <p>{a.description}</p>
           <p>{a.price}</p>
-          
+
           <br />
-          <button style={{ backgroundColor: "white", color: "red" }}>
-            {" "}
-            {"<3"} WISH LIST
+          <button
+            onClick={() => {
+              dispatch(checkout(a));
+            }}
+            style={{ backgroundColor: "Black", color: "white" }}
+          >
+            Checkout
           </button>
         </div>
       ))}
-      
     </div>
-  )
+  );
 };
 
 export default Cart;

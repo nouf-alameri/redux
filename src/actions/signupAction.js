@@ -1,10 +1,21 @@
-import { SIGNUP } from "../actionTypes/actionTypes";
+import { SIGNUP,LOGIN } from "../actionTypes/actionTypes";
 
-const signup = () => {
+const signup = (userObj) => {
     
     return{
-        type:SIGNUP
+        type:SIGNUP,
+        data:userObj
     }
   };
+const login = (check, navigate) => {
 
-  export {signup};
+    return {
+        type:LOGIN, 
+        data: check, 
+        nav: navigate
+
+    }
+}
+  export {signup, login};
+
+  
