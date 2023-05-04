@@ -1,4 +1,4 @@
-import React, {useState}from "react";
+import React, {useState,useEffect}from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addressData } from "../actions/checkoutAction";
@@ -8,10 +8,13 @@ const Checkout = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [showPayment, setShowPayment] = useState(false);
   const [address, setAddress] = useState({
     name:"", country:"", city:"", street:""
   })
-
+  // useEffect(() => {
+  //   console.log(state.cart.cartProducts)
+  // }, []);
 
   return (
     <div>
@@ -24,7 +27,7 @@ const Checkout = () => {
             </tr>
           </thead>
           <tbody>
-          {state.checkout.bill.map((a) => (
+          {state.cart.cartProducts.map((a) => (
               <tr>
                 <td className="p-4 border">{a.title}</td>
                 <td className="p-4 border">{a.price}</td>
@@ -78,7 +81,7 @@ const Checkout = () => {
             onClick={() => {dispatch(addressData(address, navigate));}}
             className="w-full text-center py-3 rounded bg-green text-black hover:bg-green-dark focus:outline-none my-1"
           >
-            Create Account
+            Submit
           </button>
         
       </div>

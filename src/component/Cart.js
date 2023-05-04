@@ -28,17 +28,20 @@ const Cart = () => {
           <p>{a.description}</p>
           <p>{a.price}</p>
 
-          <br />
+
+        </div>
+      ))}
+      <div>
+      <br />
           <button
             onClick={() => {
-              dispatch(checkout(a,navigate));
+              dispatch(checkout(state.cart.cartProducts,navigate));
             }}
             style={{ backgroundColor: "Black", color: "white" }}
           >
             Checkout
           </button>
-        </div>
-      ))}
+      </div>
     </div>
   );
 };

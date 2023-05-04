@@ -10,6 +10,8 @@ import Signup from "./component/Signup";
 import Login from "./component/Login";
 import Checkout from "./component/Checkout";
 import Thank from "./component/Thank";
+import Payment from "./component/Payment";
+
 
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="thank" element={<Thank />} />
+          <Route path="payment" element={<Payment />} />
 
           {/* 
           

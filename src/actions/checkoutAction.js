@@ -1,10 +1,10 @@
 import { CHECKOUT, ADDRESS } from "../actionTypes/actionTypes";
 
-const checkout = (products,navigate) => {
+const checkout = (cart,navigate) => {
     
     return{
         type:CHECKOUT,
-        data:products, 
+        date:cart,
         nav: navigate
 
     }

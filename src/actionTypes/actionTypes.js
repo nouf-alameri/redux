@@ -6,4 +6,5 @@ export const SIGNUP = "SIGNUP";
 export const LOGIN = "LOGIN";
 export const CHECKOUT ="CHECKOUT" ;
 export const ADDRESS = "ADDRESS"; 
+export const PAYMENT = "PAYMENT"; 
 
