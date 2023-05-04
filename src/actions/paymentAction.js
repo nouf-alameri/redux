@@ -1,4 +1,4 @@
-import { PAYMENT } from "../actionTypes/actionTypes";
+import { PAYMENT, CREDIT } from "../actionTypes/actionTypes";
 
 const payment = (method,navigate) => {
     return {
@@ -7,4 +7,12 @@ const payment = (method,navigate) => {
       nav:navigate
     };
   };
-  export {payment};
+
+  const credit = (card,navigate) => {
+    return {
+      type: CREDIT,
+      data:card, 
+      nav:navigate
+    };
+  };
+  export {payment,credit};

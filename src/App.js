@@ -11,6 +11,7 @@ import Login from "./component/Login";
 import Checkout from "./component/Checkout";
 import Thank from "./component/Thank";
 import Payment from "./component/Payment";
+import Credit from "./component/Credit";
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="thank" element={<Thank />} />
           <Route path="payment" element={<Payment />} />
+          <Route path="card" element={<Credit />} />
 
           {/* 
           
